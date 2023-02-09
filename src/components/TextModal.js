@@ -1,4 +1,4 @@
-import "../style/TextModal.scss"
+import "../style/Modal.scss"
 import { X } from "phosphor-react"
 
 export default function TextModal(props) {

@@ -1,4 +1,4 @@
-import "../style/ImgModal.scss"
+import "../style/Modal.scss"
 import { X } from "phosphor-react"
 
 export default function ImgModal(props) {
