@@ -19,7 +19,7 @@ import Stage_08 from './components/stage_08.js';
 
 function App() {
 
-  let [pageCount, setPageCount] = useState(1)
+  let [pageCount, setPageCount] = useState(0)
   let [confetti, seConfetti] = useState(false)
 
   let verifyCode = (entry, correctCode) => {
