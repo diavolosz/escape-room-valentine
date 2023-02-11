@@ -6,4 +6,11 @@
   
 }
 
-
+.audio {
+  position: absolute;
+  left: 75%;
+  top: 90%;
+  border: solid 5px white;
+  border-radius: 12px;
+  background-color: rgba(234, 0, 255, 0.733);
+}

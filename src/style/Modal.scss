@@ -20,9 +20,17 @@
     img {
       border-radius: 48px;
       border: 10px white solid;
+      height: 440px;
+      width: 800px;
+      object-fit: cover;
     }
   }
 
+  .modal-emoji {
+    span {
+      font-size: 500px;
+    }
+  }
   button {
     position: absolute;
     left: 90%;

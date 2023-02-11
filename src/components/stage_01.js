@@ -3,19 +3,26 @@ import { Check, Lightbulb } from "phosphor-react"
 import { useState } from "react"
 import TextModal from "./TextModal"
 import ImgModal from "./ImgModal"
+import EmojiModal from "./EmojiModal"
 
-export default function Stage_01() {
-  let [code, setCode] = useState()
+export default function Stage_01(props) {
+  let [code, setCode] = useState("")
   let [tip, setTip] = useState(0)
+
 
   return (
     <div className="stage-container">
       <div className="img-container">
-        <img src="img/sample.jpg"></img>
+        <img src="img/Event_1.jpg"></img>
       </div>
 
-      <input value={code}></input>
-      <button className="button"><Check /></button>
+      <input value={code} onChange={(e) => setCode(e.target.value)}></input>
+      <button className="button"
+        onClick={() => {
+          props.verifyCode(code, props.correctCode)
+        }}>
+        <Check />
+      </button>
 
       <div className="tips-contianer">
         <button className="button tips-button" onClick={() => setTip(1)}><Lightbulb /></button>
@@ -23,9 +30,9 @@ export default function Stage_01() {
         <button className="button tips-button" onClick={() => setTip(3)}><Lightbulb /></button>
       </div>
 
-      {tip === 1 && <TextModal text={"This is a tip"} setTip={setTip} />}
-      {tip === 2 && <ImgModal image={"img/sampleModal.jpg"} setTip={setTip} />}
-      {tip === 3 && <TextModal text={"This is another tip"} setTip={setTip} />}
-    </div>
+      {tip === 1 && <EmojiModal emoji={'💖'} setTip={setTip} />}
+      {tip === 2 && <TextModal text={"COLOUR NUMER"} setTip={setTip} />}
+      {tip === 3 && <TextModal text={"5 _ _ _ _"} setTip={setTip} />}
+    </div> 
   )
 }
