@@ -15,10 +15,11 @@ import Stage_04 from './components/stage_04.js';
 import Stage_05 from './components/stage_05.js';
 import Stage_06 from './components/stage_06.js';
 import Stage_07 from './components/stage_07.js';
+import Stage_08 from './components/stage_08.js';
 
 function App() {
 
-  let [pageCount, setPageCount] = useState(1)
+  let [pageCount, setPageCount] = useState(8)
   let [confetti, seConfetti] = useState(false)
 
   let verifyCode = (entry, correctCode) => {
@@ -38,6 +39,10 @@ function App() {
     }
   }
 
+  const startGame = () => {
+    setPageCount(1)
+  }
+
   const { width, height } = useWindowSize()
   return (
 
@@ -54,7 +59,7 @@ function App() {
         </div>
       }
 
-
+      {pageCount === 0 && <Stage_00 startGame={() => startGame()}></Stage_00>}
       {pageCount === 1 && <Stage_01 verifyCode={(entry, correctCode) => verifyCode(entry, correctCode)} correctCode={53214} ></Stage_01>}
       {pageCount === 2 && <Stage_02 verifyCode={(entry, correctCode) => verifyCode(entry, correctCode)} correctCode={1986} ></Stage_02>}
       {pageCount === 3 && <Stage_03 verifyCode={(entry, correctCode) => verifyCode(entry, correctCode)} correctCode={563} ></Stage_03>}
@@ -62,7 +67,7 @@ function App() {
       {pageCount === 5 && <Stage_05 verifyCode={(entry, correctCode) => verifyCode(entry, correctCode)} correctCode={"QSKVOLB"} ></Stage_05>}
       {pageCount === 6 && <Stage_06 verifyCode={(entry, correctCode) => verifyCode(entry, correctCode)} correctCode={6428} ></Stage_06>}
       {pageCount === 7 && <Stage_07 verifyCode={(entry, correctCode) => verifyCode(entry, correctCode)} correctCode={"🐥❤️🐰"} ></Stage_07>}
-
+      {pageCount === 8 && <Stage_08></Stage_08>}
 
 
     </div>
